@@ -2,7 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../../utils/db";
 import { updatedArticle } from "../../../../../utils/validation";
 
-export async function GET(request: NextRequest, { params }: any) {
+interface Props {
+  params: { id: string };
+}
+
+export async function GET(request: NextRequest, { params }: Props) {
   try {
     const article = await prisma.article.findUnique({
       where: { id: parseInt(params.id) },
@@ -22,7 +26,7 @@ export async function GET(request: NextRequest, { params }: any) {
   }
 }
 
-export async function PUT(request: NextRequest, { params }: any) {
+export async function PUT(request: NextRequest, { params }: Props) {
   try {
     const article = await prisma.article.findUnique({
       where: { id: parseInt(params.id) },
@@ -58,7 +62,7 @@ export async function PUT(request: NextRequest, { params }: any) {
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: any) {
+export async function DELETE(request: NextRequest, { params }: Props) {
   try {
     const article = await prisma.article.findUnique({
       where: { id: parseInt(params.id) },
