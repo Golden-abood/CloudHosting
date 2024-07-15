@@ -1,0 +1,16 @@
+UI: 
+=> Home Page :  
+=> Articles Page : 
+=> Article Page : 
+=> Admin Page :  
+=> Login : 
+=> Register : 
+=> About :  
+
+
+End Points : 
+=> Get Articles 
+=> Get Article 
+=> Update Article 
+=> Create Article  
+=> Delete Article
