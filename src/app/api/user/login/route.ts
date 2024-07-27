@@ -6,6 +6,13 @@ import { LoginUser } from "../../../../../utils/types";
 import { loginUser } from "../../../../../utils/validation";
 import { generateToken } from "../../../../../utils/generateToken";
 
+/**
+ * @method Post
+ * @route /api/user/login
+ * @desc Login User
+ * @access public
+ */
+
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as LoginUser;

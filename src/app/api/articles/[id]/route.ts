@@ -5,6 +5,12 @@ import { updatedArticle } from "../../../../../utils/validation";
 interface Props {
   params: { id: string };
 }
+/**
+ * @method Get
+ * @route /api/articles/:id
+ * @desc Get Single Article
+ * @access public
+ */
 
 export async function GET(request: NextRequest, { params }: Props) {
   try {
@@ -25,6 +31,13 @@ export async function GET(request: NextRequest, { params }: Props) {
     );
   }
 }
+
+/**
+ * @method Put
+ * @route /api/articles/:id
+ * @desc Update Article
+ * @access public
+ */
 
 export async function PUT(request: NextRequest, { params }: Props) {
   try {
@@ -61,6 +74,12 @@ export async function PUT(request: NextRequest, { params }: Props) {
     );
   }
 }
+/**
+ * @method Delete
+ * @route /api/articles/:id
+ * @desc Delete  Article
+ * @access public
+ */
 
 export async function DELETE(request: NextRequest, { params }: Props) {
   try {

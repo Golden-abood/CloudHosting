@@ -5,6 +5,13 @@ import { RegisterUser } from "../../../../../utils/types";
 import { registerUser } from "../../../../../utils/validation";
 import { generateToken } from "../../../../../utils/generateToken";
 
+/**
+ * @method Post
+ * @route /api/user/register
+ * @desc Register User
+ * @access public
+ */
+
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as RegisterUser;

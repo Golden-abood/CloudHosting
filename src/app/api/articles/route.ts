@@ -4,8 +4,8 @@ import { createArticle } from "../../../../utils/validation";
 
 /**
  * @method Get
+ * @route /api/articles
  * @desc Get All Articles
- *
  * @access public
  */
 
@@ -23,6 +23,7 @@ export async function GET(request: NextRequest) {
 }
 /**
  * @method Post
+ * @route /api/articles
  * @desc Create Article
  * @access public
  */
