@@ -14,9 +14,9 @@ const contactPage = () => {
         <ContactForm />
       </div>
       <div className="container pt-28 py-32 relative">
-        {/* <Ready className="relative pt-10 gradi">
+        <Ready className="relative pt-10 gradi">
           <Button text="View Pricing" classes="mt-12 relative z-10" />
-        </Ready> */}
+        </Ready>
       </div>
     </div>
   );

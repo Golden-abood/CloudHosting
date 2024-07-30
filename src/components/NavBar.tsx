@@ -9,7 +9,7 @@ import MobileNav from "./Mobile/Nav";
 import { useState } from "react";
 
 const NavBar = () => {
-  const links = ["Home", "Product", "Pricing", "About Us", "FAQ", "Contact"];
+  const links = ["Home", "About Us", "Articles", "Contact"];
   const [showMenu, setShowMenu] = useState(false);
 
   const toggle = (): void => setShowMenu((prev) => !prev);
@@ -24,41 +24,46 @@ const NavBar = () => {
           alt="logo"
           height={0}
         />
-        <div className="flex items-center gap-x-8">
-          <ul className="hidden lg:flex gap-x-8">
-            {links.map((link) => (
-              <li className="cursor-pointer">
-                <Link
-                  className="text-base font-semibold text-white transition-colors hover:text-primary"
-                  href={
-                    link === "Home"
-                      ? "/"
-                      : link === "About Us"
-                      ? "about-us"
-                      : link.toLowerCase()
-                  }
-                >
-                  {link}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="hidden lg:block">
-            <Button text="Free trial" />
-          </div>
-          <nav className="z-40 flex items-center justify-between lg:hidden">
-            <div>
-              <Icon
-                color={"white"}
-                path={mdiMenu}
-                size={1.5}
-                className="cursor-pointer"
-                onClick={() => toggle()}
-              />
-              {showMenu && <MobileNav setPrevState={() => toggle()} />}
-            </div>
-          </nav>
+        <ul className="hidden lg:flex gap-x-8">
+          {links.map((link) => (
+            <li className="cursor-pointer">
+              <Link
+                className="text-base font-semibold text-white transition-colors hover:text-primary"
+                href={
+                  link === "Home"
+                    ? "/"
+                    : link === "About Us"
+                    ? "about-us"
+                    : link.toLowerCase()
+                }
+              >
+                {link}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="hidden lg:block space-x-6">
+          <Button
+            classes="!text-white !border-primary  !border-[1px] py-[12px] px-12 !bg-transparent hover:!bg-primary hover:!text-black duration-500"
+            text="request a demo"
+          />
+          <Button
+            text="Login"
+            classes="!text-white !border-white !border-[1px] py-[12px] !bg-transparent hover:!bg-white hover:!text-black duration-500"
+          />
         </div>
+        <nav className="z-40 flex items-center justify-between lg:hidden">
+          <div>
+            <Icon
+              color={"white"}
+              path={mdiMenu}
+              size={1.5}
+              className="cursor-pointer"
+              onClick={() => toggle()}
+            />
+            {showMenu && <MobileNav setPrevState={() => toggle()} />}
+          </div>
+        </nav>
       </nav>
     </div>
   );
