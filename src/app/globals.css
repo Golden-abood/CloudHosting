@@ -1,4 +1,186 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "../components/Hero/hero.css";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: #ec912b;
+    --primary-foreground: #ec912b;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: #ec912b;
+    --primary-foreground: #ec912b;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@media (max-width: 320px) {
+  .before-title::before {
+    left: -5%;
+  }
+}
+@media (min-width: 325px) and (max-width: 376px) {
+  .before-title::before {
+    left: 0%;
+  }
+}
+@media (min-width: 377px) and (max-width: 395px) {
+  .before-title::before {
+    left: 5%;
+  }
+}
+@media (min-width: 395px) and (max-width: 450px) {
+  .before-title::before {
+    left: 10%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .before-title::before {
+    left: -4%;
+    top: -25%;
+  }
+}
+.gradient::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 0;
+  width: 40%;
+  height: 280px;
+  transform: rotate(-176.456deg) scale3d(1, 1, 1);
+  background: radial-gradient(#ec201b 47.55%, #ffd481);
+  filter: blur(450px);
+  border-radius: 1100px;
+}
+@media (max-width: 600px) {
+  .gradient::before {
+    width: 0;
+    height: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .gradient::before {
+    filter: blur(350px);
+  }
+}
+.circle-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(239, 161, 8, 0.01) 0%,
+    rgba(236, 145, 42, 0.01) 100%
+  );
+}
+.circle-gradient-parent {
+  background: linear-gradient(
+    180deg,
+    rgba(239, 161, 8, 0.04) 0%,
+    rgba(236, 145, 42, 0.04) 100%
+  );
+}
+
+.about_gradient::before {
+  content: "";
+  z-index: 2;
+  width: 511.532px;
+  height: 531.461px;
+  filter: blur(290px);
+  mix-blend-mode: normal;
+  background: radial-gradient(
+    2762.36% 537.65% at -49.5% -250%,
+    #ec912a 17.55%,
+    rgba(236, 145, 42, 0.14) 27.56%,
+    #ec912a 55.89%,
+    #fff 66.53%,
+    rgba(236, 145, 42, 0.38) 72.69%
+  );
+  border-radius: 531px;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  opacity: 0.5;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(90deg)
+    skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 768px) {
+  .about_gradient::before {
+    height: 350px;
+  }
+}
+
+.gradient_ready::before {
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 300.461px;
+  filter: blur(260px);
+  background: radial-gradient(#f1563c 17.55%, #f8b75f 52.69%);
+  border-radius: 963.598px;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  opacity: 0.5;
+  transform: translate3d(0px, 0px, 0px) scale3d(1.5, 1, 1) rotate(90deg)
+    skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+@media (max-width: 900px) {
+  .gradient_ready::before {
+    width: 500px;
+  }
+}

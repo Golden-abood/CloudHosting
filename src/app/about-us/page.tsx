@@ -2,6 +2,7 @@ import AboutUsCard from "@/components/AboutUs/Card";
 import ParagraphText from "@/components/Base/ParagraphText";
 import Title from "@/components/Base/Title";
 import Image from "next/image";
+import Ready from "@/components/Ready";
 
 const aboutPage = () => {
   return (
@@ -72,6 +73,11 @@ const aboutPage = () => {
         </div>
       </div>
       <AboutUsCard />
+      <section className="py-40 relative container">
+        <div className="gradient_ready">
+          <Ready />
+        </div>
+      </section>
     </div>
   );
 };

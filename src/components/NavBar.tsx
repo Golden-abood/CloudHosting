@@ -28,7 +28,7 @@ const NavBar = () => {
           {links.map((link) => (
             <li className="cursor-pointer">
               <Link
-                className="text-base font-semibold text-white transition-colors hover:text-primary"
+                className="text-base font-semibold text-white transition-colors duration-500 hover:text-primary"
                 href={
                   link === "Home"
                     ? "/"
@@ -45,12 +45,14 @@ const NavBar = () => {
         <div className="hidden lg:block space-x-6">
           <Button
             classes="!text-white !border-primary  !border-[1px] py-[12px] px-12 !bg-transparent hover:!bg-primary hover:!text-black duration-500"
-            text="request a demo"
+            text="Register"
           />
-          <Button
-            text="Login"
-            classes="!text-white !border-white !border-[1px] py-[12px] !bg-transparent hover:!bg-white hover:!text-black duration-500"
-          />
+          <Link href={"/login"}>
+            <Button
+              text="Login"
+              classes="!text-white !border-white !border-[1px] py-[12px] !bg-transparent hover:!bg-white hover:!text-black duration-500"
+            />
+          </Link>
         </div>
         <nav className="z-40 flex items-center justify-between lg:hidden">
           <div>

@@ -1,7 +1,7 @@
 import ParagraphText from "@/components/Base/ParagraphText";
 import Title from "@/components/Base/Title";
 
-const Ready = ({ children }: any) => {
+const Ready = ({ children }: RootLayoutProps) => {
   return (
     <div className="mx-auto text-center md:max-w-[70%] relative">
       <Title
