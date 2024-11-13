@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={barlow.className}>
-        <div className="bg-black min-h-screen">
+        <div className="!bg-black min-h-screen">
           <NavBar />
           <>{children}</>
           <Footer />

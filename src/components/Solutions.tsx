@@ -1,40 +1,9 @@
 import Image from "next/image";
 import Title from "./Base/Title";
 import ParagraphText from "./Base/ParagraphText";
+import { solutions } from "../../constants";
 
 const Solutions = () => {
-  const solutions = [
-    {
-      icon: "/images/solutions/icon-1-removebg-preview-(1).png",
-      title: "Scalable Deployment",
-      body: "Efficient handling of fluctuating user demand",
-    },
-    {
-      icon: "/images/solutions/icon-2.svg",
-      title: "Seamless Feature Integration",
-      body: "Seamless technology integration and upgrades without user interruption",
-    },
-    {
-      icon: "/images/solutions/icon-3.svg",
-      title: "Performance Monitoring",
-      body: "Real-Time Insights: Monitor your deployed machine learning models for performance and user satisfaction",
-    },
-    {
-      icon: "/images/solutions/icon-4.svg",
-      title: "Robust Security Measures",
-      body: "Ensures robust security for your models and data through authentication, encryption, and ongoing audits",
-    },
-    {
-      icon: "/images/solutions/icon-5.svg",
-      title: "Intuitive UI Design",
-      body: "Intuitive design and clear guidance to make your model user friendly",
-    },
-    {
-      icon: "/images/solutions/icon-5.svg",
-      title: "Misusage alarm",
-      body: "Alarm model users at model misusage",
-    },
-  ];
   const backGradient = {
     background:
       "linear-gradient( 180deg , rgba(50, 49, 49, 0.7) 0%, rgba(50, 49, 49, 0) 100%)",

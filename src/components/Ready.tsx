@@ -1,7 +1,7 @@
 import ParagraphText from "@/components/Base/ParagraphText";
 import Title from "@/components/Base/Title";
 
-const Ready = ({ children }: RootLayoutProps) => {
+const Ready = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="mx-auto text-center md:max-w-[70%] relative">
       <Title
@@ -10,7 +10,7 @@ const Ready = ({ children }: RootLayoutProps) => {
       />
       <ParagraphText
         text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.
-"
+    "
         classes="mt-6 text-base relative z-10"
       />
       <div className="relative z-10">{children}</div>

@@ -15,9 +15,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import BasePagination from "@/components/Base/Pagination";
+import Link from "next/link";
 
-const ArticlesPage = () => {
-  const articles = [
+const ArticlesPage = async () => {
+  let articles = [
     {
       id: 1,
       title: "Hello World",
@@ -100,51 +101,71 @@ const ArticlesPage = () => {
       body: ";sadjfgboasld;g./jbsadgfupoisdfnm' ghnsoduvfhgv ",
     },
   ];
+
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
+  articles = data;
+
   return (
     <div className="container">
       <div className="flex justify-center mt-8">
         <SearchInput />
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-          {articles.map((a) => (
-            <Card
-              key={a.id}
-              className="bg-[#18181b] border-none !border-t-primary border-t-8 text-white "
-            >
-              <CardHeader>
-                <div className="flex gap-5">
-                  <div className="w-12 h-12">
-                    <Avatar>
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16 ">
+          {articles.map((module) => (
+            <Link href={`articles/${module.id}`}>
+              <Card
+                key={module.id}
+                className="bg-[#18181b]  !border-0 !border-t-8 !border-t-primary cursor-pointer  text-white "
+              >
+                <CardHeader>
+                  <div className="flex gap-5">
+                    <div className="w-12 h-12">
+                      <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback className="bg-primary">
+                          CN
+                        </AvatarFallback>
+                      </Avatar>
+                    </div>
+                    <div>
+                      <h3>{module.author}</h3>
+                      <p className="text-sm"> {module.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3>{a.author}</h3>
-                    <p> {a.description}</p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent color={"gray.500"}>
-                <CardTitle>{a.title}</CardTitle>
-                <CardDescription> {a.body}</CardDescription>
-              </CardContent>
+                </CardHeader>
+                <CardContent color={"gray.500"}>
+                  <CardTitle className="mb-4 line-clamp-1 text-lg">
+                    {module.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm line-clamp-3">
+                    {" "}
+                    {module.body}
+                  </CardDescription>
+                </CardContent>
 
-              {/* <Divider borderColor={"gray.200"}></Divider> */}
-              <CardFooter>
-                <div className="flex justify-between w-full">
-                  <Button variant={"ghost"} className="gap-3">
-                    <Icon path={mdiEyeOutline} size={1} />
-                    <span>watch</span>
-                  </Button>
-                  <Button variant={"ghost"} className="gap-3">
-                    <Icon path={mdiFileEditOutline} size={1} />
-                    <span>Comment</span>
-                  </Button>
-                </div>
-              </CardFooter>
-            </Card>
+                {/* <Divider borderColor={"gray.200"}></Divider> */}
+                <CardFooter className=" pb-y-5">
+                  <div className="flex justify-between w-full">
+                    <Button
+                      variant={"destructive"}
+                      className="gap-3 bg-primary hover:bg-white hover:text-primary border-white border-2"
+                    >
+                      <Icon path={mdiEyeOutline} size={1} />
+                      <span>watch</span>
+                    </Button>
+                    <Button
+                      variant={"destructive"}
+                      className="gap-3 bg-primary hover:bg-white hover:text-primary border-white border-2"
+                    >
+                      <Icon path={mdiFileEditOutline} size={1} />
+                      <span>Comment</span>
+                    </Button>
+                  </div>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

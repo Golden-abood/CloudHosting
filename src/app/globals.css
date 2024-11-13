@@ -184,3 +184,55 @@
     width: 500px;
   }
 }
+
+.module_card {
+  background: linear-gradient(to bottom, #8d5e1c, #da972e);
+}
+.DarkToLight {
+  background: linear-gradient(
+    135deg,
+    #1a1c24 0%,
+    #da972e 10%,
+    #39353f 60%,
+    #1a1c24 100%
+  );
+}
+
+.DarkBlue {
+  background: linear-gradient(135deg, #1a1c24 0%, #57c7e3 50%, #3fd0a7 100%);
+}
+.SubtleGlow {
+  background: radial-gradient(circle, #2f3239 20%, #1a1c24 70%, #57c7e3 100%);
+}
+
+.VerticalDarkToLight {
+  background: linear-gradient(to bottom, #1a1c24, #2f3239, #3fd0a7, #a3d4e5);
+}
+.lucide.lucide-x.h-4.w-4 {
+  display: none;
+}
+
+.bridge_story_gradi::before {
+  content: "";
+  z-index: 2;
+  width: 511.532px;
+  height: 430.461px;
+  filter: blur(280px);
+  mix-blend-mode: normal;
+  background: radial-gradient(
+    2762.36% 537.65% at -49.5% -250%,
+    #ec912a 17.55%,
+    rgba(236, 145, 42, 0.14) 27.56%,
+    #ec912a 50.89%,
+    #fff 70.53%,
+    rgba(236, 145, 42, 0.38) 82.69%
+  );
+  border-radius: 531px;
+  position: absolute;
+  top: 60%;
+  right: 0%;
+  opacity: 0.5;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(90deg)
+    skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
