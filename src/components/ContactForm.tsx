@@ -27,37 +27,40 @@ const ContactForm = () => {
       <div className="text-center lg:text-start">
         <Title
           title="Drop us a message"
-          classes="text-3xl md:text-4xl font-bold"
+          className="text-3xl md:text-4xl font-bold"
         />
         <ParagraphText
           text="We will get back to you as soon as possible."
-          classes="text-lg pt-4 "
+          className="text-lg pt-4 "
         />
       </div>
       <div className="lg:flex justify-start gap-x-10 xl:gap-x-64 pt-14">
         <form>
           <div className="lg:flex gap-x-4">
-            <Input placeholder="Full Name" classes="w-full lg:w-72 mb-2" />
-            <Input placeholder="Company Name" classes="w-full lg:w-72 mb-2" />
+            <Input placeholder="Full Name" className="w-full lg:w-72 mb-2" />
+            <Input placeholder="Company Name" className="w-full lg:w-72 mb-2" />
           </div>
 
           <div className="mb-2">
-            <Input placeholder="Work Email" classes="!w-full" />
+            <Input placeholder="Work Email" className="!w-full" />
           </div>
 
           <div className="mb-2">
-            <Input placeholder="Subject" classes="!w-full" />
+            <Input placeholder="Subject" className="!w-full" />
           </div>
 
           <div className="lg:mt-28">
-            <Input placeholder="Message" classes="!w-full focus:outline-none" />
+            <Input
+              placeholder="Message"
+              className="!w-full focus:outline-none"
+            />
           </div>
 
           <Button
             text="Send"
             bgColor="#ec912b"
             block={true}
-            classes="mt-5 text-center lg:text-start text-white"
+            className="mt-5 text-center lg:text-start text-white"
           />
         </form>
         <div className="pt-10 lg:pt-0">

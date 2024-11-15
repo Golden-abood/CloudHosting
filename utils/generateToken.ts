@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 type jwtPayload = {
   id: number;
-  usernam: string;
+  username: string;
   isAdmin: Boolean;
 };
 

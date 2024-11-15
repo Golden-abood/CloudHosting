@@ -12,7 +12,7 @@ const Solutions = () => {
     <div className="relative gradient">
       <Title
         title="Our solutions common values"
-        classes="flex justify-center text-3xl md:text-5xl mb-16 container relative !blur-0"
+        className="flex justify-center text-3xl md:text-5xl mb-16 container relative !blur-0"
       />
 
       <div
@@ -34,9 +34,9 @@ const Solutions = () => {
                   className={`mx-auto mb-4 ${i === 0 ? "w-12" + "" : "w-14"}`}
                 />
 
-                <Title title={s.title} classes="text-2xl mb-4" />
+                <Title title={s.title} className="text-2xl mb-4" />
 
-                <ParagraphText text={s.body} classes="text-base text-white" />
+                <ParagraphText text={s.body} className="text-base text-white" />
               </div>
             </div>
           ))}

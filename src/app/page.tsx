@@ -65,22 +65,22 @@ export default function Home() {
       <section className="pt-40 pb-2">
         <Title
           title="Accelerate ML Model Deployment with Cloud-Powered Efficiency"
-          classes="hidden md:block text-center text-5xl"
+          className="hidden md:block text-center text-5xl"
         />
         <div className="container ">
           <Title
             title="Accelerate ML Model Deployment with Cloud-Powered Efficiency"
-            classes="md:hidden text-center text-3xl"
+            className="md:hidden text-center text-3xl"
           />
           <ParagraphText
             text="Bring your machine learning models to life with our cloud hosting platform designed specifically for scalable and reliable AI deployment. From seamless feature integration to real-time monitoring, our platform ensures your models reach peak performance with minimal hassle. Unlock the full potential of your models and deliver real value to your end users with enhanced security, fast deployments, and powerful analytics tools."
-            classes="text-center pb-16 mt-10 md:mt-14 md:px-10 shadow-text"
+            className="text-center pb-16 mt-10 md:mt-14 md:px-10 shadow-text"
           />
           <div className="flex justify-center">
             <Button
               text="Discover More"
               bgColor="#ec912b"
-              classes="text-center md:mt-6"
+              className="text-center md:mt-6"
             />
           </div>
         </div>

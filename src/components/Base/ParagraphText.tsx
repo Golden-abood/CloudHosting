@@ -1,11 +1,15 @@
+import { ClassNameValue } from "tailwind-merge";
+
 type ParagraphTextProps = {
   text: string;
-  classes?: string;
+  className?: ClassNameValue;
 };
 
-const ParagraphText = ({ text, classes }: ParagraphTextProps) => {
+const ParagraphText = ({ text, className }: ParagraphTextProps) => {
   return (
-    <p className={"font-normal text-white opacity-[0.87] " + classes}>{text}</p>
+    <p className={"font-normal text-white opacity-[0.87] " + className}>
+      {text}
+    </p>
   );
 };
 

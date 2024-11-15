@@ -3,6 +3,7 @@ import { Barlow } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { cookies, headers } from "next/headers";
 
 const barlow = Barlow({ subsets: ["latin"], weight: "500" });
 
@@ -16,11 +17,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const userStatus = headers().get("X-User-Status") || "guest";
+  const username = headers().get("X-User-Name") || null;
+  const id = headers().get("X-User-Id");
+
+  console.log(userStatus, username, id);
   return (
     <html lang="en">
       <body className={barlow.className}>
         <div className="!bg-black min-h-screen">
-          <NavBar />
+          <NavBar userStatus={userStatus} username={username} />
           <>{children}</>
           <Footer />
         </div>

@@ -36,7 +36,7 @@ const AboutUsCard = () => {
           />
           <Title
             title={item.title}
-            classes={
+            className={
               i === 0
                 ? "text-center text-2xl !text-primary"
                 : "md:text-start text-2xl !text-primary"
@@ -44,7 +44,7 @@ const AboutUsCard = () => {
           />
           <ParagraphText
             text={item.text}
-            classes="mx-auto text-lg leading-8 !text-[#030301] pt-2 !font-medium"
+            className="mx-auto text-lg leading-8 !text-[#030301] pt-2 !font-medium"
           />
         </div>
       ))}

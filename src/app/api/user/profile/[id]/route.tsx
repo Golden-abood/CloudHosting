@@ -6,6 +6,23 @@ interface Props {
   params: { id: string };
 }
 
+export async function GET(request: NextRequest, { params }: Props) {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: parseInt(params.id) },
+    });
+    if (!user) {
+      return NextResponse.json({ messages: "User Not Found" }, { status: 404 });
+    }
+    return NextResponse.json(user, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Internal Server Error " },
+      { status: 500 }
+    );
+  }
+}
+
 export async function DELETE(request: NextRequest, { params }: Props) {
   try {
     const user = await prisma.user.findUnique({

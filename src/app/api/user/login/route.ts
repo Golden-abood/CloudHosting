@@ -49,10 +49,18 @@ export async function POST(request: NextRequest) {
     };
     const token = generateToken(jwtPayload);
 
-    return NextResponse.json(
+    const response = NextResponse.json(
       { message: "authenticated", token },
       { status: 200 }
     );
+    response.cookies.set("token", token, {
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+      path: "/", // Make it accessible throughout the site
+      secure: true, // Disable secure in development (enable in production)
+      httpOnly: false, // Allow access via `document.cookie`
+      sameSite: "lax",
+    });
+    return response;
   } catch (err) {
     return NextResponse.json(
       { message: "internal server error" },
