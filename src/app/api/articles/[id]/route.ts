@@ -16,8 +16,9 @@ export async function GET(request: NextRequest, { params }: Props) {
   try {
     const article = await prisma.article.findUnique({
       where: { id: parseInt(params.id) },
-      select: { userId: parseInt(params.id) },
+      select: { userId: true },
     });
+
     if (!article) {
       return NextResponse.json(
         { message: "Article Not Found" },
