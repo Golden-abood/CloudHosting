@@ -15,6 +15,7 @@ datasource db {
 
 model User {
   id         Int      @id @default(autoincrement())
+  avatar     String  @default("https://github.com/shadcn.png")
   email      String   @unique
   username   String   @db.VarChar(100)
   password   String
@@ -32,8 +33,9 @@ model Article {
   createdAt   DateTime  @default(now())
   updateddAt  DateTime  @updatedAt
   comments    Comment[]
-  userId     Int
-  user       User     @relation(fields: [userId], references: [id])
+  userId     Int        @default(autoincrement())
+  user       User       @relation(fields: [userId], references: [id])
+  image     String      @default("https://cloud.appwrite.io/v1/storage/buckets/67180f19002ab2665cd7/files/671bc726002f942ee3ff/view?project=6717cc38002275da6f3d&project=6717cc38002275da6f3d&mode=admin")
 }
 
 model Comment {

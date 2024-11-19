@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Button from "./Base/Button";
 import Icon from "@mdi/react";
-import { mdiMenu } from "@mdi/js";
+import { mdiMenu, mdiClose } from "@mdi/js";
 import MobileNav from "./Mobile/Nav";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -96,9 +96,10 @@ const NavBar = ({
           <div>
             <Icon
               color={"white"}
-              path={mdiMenu}
+              path={showMenu ? mdiClose : mdiMenu}
               size={1.5}
-              className="cursor-pointer"
+              className="cursor-pointer relative !z-[1000]"
+              /*@ts-ignore */
               onClick={() => toggle()}
             />
             {showMenu && <MobileNav setPrevState={() => toggle()} />}

@@ -13,12 +13,12 @@ const ContactForm = () => {
     },
     {
       icon: "/images/contact/icon-2.svg",
-      title: "finsweet@gmail.com",
+      title: "cloudHosting@gmail.com",
       text: "Help Email support",
     },
     {
       icon: "/images/contact/icon-3.svg",
-      title: "sales@finsweet.com",
+      title: "sales@cloud.com",
       text: "Sales Enquiry",
     },
   ];

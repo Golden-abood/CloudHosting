@@ -5,6 +5,8 @@ import Button from "@/components/Base/Button";
 import ParagraphText from "@/components/Base/ParagraphText";
 import Ready from "@/components/Ready";
 import BridgeStory from "@/components/BridgeStory";
+import { MotionDiv } from "@/components/MotionDiv";
+import { descoverBtn, solutionTitle } from "../../utils/variants";
 
 export default function Home() {
   // const cards = [
@@ -63,11 +65,24 @@ export default function Home() {
         <Solutions />
       </section>
       <section className="pt-40 pb-2">
-        <Title
-          title="Accelerate ML Model Deployment with Cloud-Powered Efficiency"
-          className="hidden md:block text-center text-5xl"
-        />
-        <div className="container ">
+        <MotionDiv
+          variants={solutionTitle}
+          initial="hiden"
+          whileInView="visible"
+          transition={{ ease: "easeInOut", duration: 0.5 }}
+        >
+          <Title
+            title="Accelerate ML Model Deployment with Cloud-Powered Efficiency"
+            className="hidden md:block text-center text-5xl"
+          />
+        </MotionDiv>
+        <MotionDiv
+          variants={solutionTitle}
+          initial="hiden"
+          whileInView="visible"
+          transition={{ ease: "easeInOut", duration: 0.5 }}
+          className="container "
+        >
           <Title
             title="Accelerate ML Model Deployment with Cloud-Powered Efficiency"
             className="md:hidden text-center text-3xl"
@@ -76,15 +91,22 @@ export default function Home() {
             text="Bring your machine learning models to life with our cloud hosting platform designed specifically for scalable and reliable AI deployment. From seamless feature integration to real-time monitoring, our platform ensures your models reach peak performance with minimal hassle. Unlock the full potential of your models and deliver real value to your end users with enhanced security, fast deployments, and powerful analytics tools."
             className="text-center pb-16 mt-10 md:mt-14 md:px-10 shadow-text"
           />
-          <div className="flex justify-center">
+          <MotionDiv
+            variants={descoverBtn}
+            initial="hiden"
+            whileInView="visible"
+            whileHover="hover"
+            transition={{ ease: "easeInOut", duration: 0.5 }}
+            className="flex justify-center"
+          >
             <Button
               text="Discover More"
               bgColor="#ec912b"
               className="text-center md:mt-6"
             />
-          </div>
-        </div>
-        <section className="pt-20 pb-48">
+          </MotionDiv>
+        </MotionDiv>
+        <section className="pt-20 md:pb-48">
           <BridgeStory />
         </section>
       </section>
@@ -98,11 +120,6 @@ export default function Home() {
           <Ready />
         </div>
       </section>
-      {/* <HomeMainProduct className="py-20" />
-      
-      <HomeFeatures />
-      <HomeOurTeam className="pb-20" />
-      <HomeLifeCycle /> */}
     </div>
   );
 }

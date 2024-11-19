@@ -1,7 +1,6 @@
 import SearchInput from "@/components/Base/SearchInput";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Icon from "@mdi/react";
 import { mdiFileEditOutline } from "@mdi/js";
 import { mdiEyeOutline } from "@mdi/js";
@@ -102,7 +101,11 @@ const ArticlesPage = async () => {
     },
   ];
 
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("http://localhost:3000/api/articles", {
+    next: {
+      revalidate: 10,
+    },
+  });
   const data = await res.json();
   articles = data;
 
@@ -113,10 +116,10 @@ const ArticlesPage = async () => {
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16 ">
-          {articles.map((module) => (
-            <Link href={`articles/${module.id}`}>
+          {articles.map((article) => (
+            <Link href={`articles/${article.id}`}>
               <Card
-                key={module.id}
+                key={article.id}
                 className="bg-[#18181b]  !border-0 !border-t-8 !border-t-primary cursor-pointer  text-white "
               >
                 <CardHeader>
@@ -130,18 +133,18 @@ const ArticlesPage = async () => {
                       </Avatar>
                     </div>
                     <div>
-                      <h3>{module.author}</h3>
-                      <p className="text-sm"> {module.description}</p>
+                      <h3>{article.author}</h3>
+                      {/* <p className="text-sm"> {article.description}</p> */}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent color={"gray.500"}>
                   <CardTitle className="mb-4 line-clamp-1 text-lg">
-                    {module.title}
+                    {article.title}
                   </CardTitle>
                   <CardDescription className="text-sm line-clamp-3">
                     {" "}
-                    {module.body}
+                    {article.description}
                   </CardDescription>
                 </CardContent>
 

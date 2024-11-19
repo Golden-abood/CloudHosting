@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ParagraphText from "../Base/ParagraphText";
 import Title from "../Base/Title";
+import { MotionDiv } from "../MotionDiv";
+import { aboutCard } from "../../../utils/variants";
 const items = [
   {
     title: "Why CalibroAI?",
@@ -19,7 +21,15 @@ const AboutUsCard = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
       {items.map((item, i) => (
-        <div
+        <MotionDiv
+          variants={aboutCard}
+          initial="hiden"
+          whileInView="visible"
+          transition={{
+            delay: i * 0.3,
+            ease: "easeInOut",
+            duration: 0.5,
+          }}
           key={i}
           className="py-12 bg-white gradient text-center md:text-start px-20 relative"
         >
@@ -46,7 +56,7 @@ const AboutUsCard = () => {
             text={item.text}
             className="mx-auto text-lg leading-8 !text-[#030301] pt-2 !font-medium"
           />
-        </div>
+        </MotionDiv>
       ))}
     </div>
   );
